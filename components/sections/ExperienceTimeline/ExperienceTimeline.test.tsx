@@ -81,6 +81,23 @@ describe('ExperienceTimeline Component', () => {
     });
   });
 
+  describe('Scroll Reveal', () => {
+    it('should wrap each card in a scroll reveal wrapper', () => {
+      const { container } = render(<ExperienceTimeline experiences={mockExperiences} />);
+      const wrappers = container.querySelectorAll('.scroll-reveal-hidden');
+      expect(wrappers.length).toBe(mockExperiences.length);
+    });
+
+    it('should apply staggered delay to each card', () => {
+      const { container } = render(<ExperienceTimeline experiences={mockExperiences} />);
+      const wrappers = container.querySelectorAll('.scroll-reveal-hidden');
+      // First card: delay 0 (no inline style)
+      expect((wrappers[0] as HTMLElement).style.transitionDelay).toBe('');
+      // Second card: delay 150ms
+      expect((wrappers[1] as HTMLElement).style.transitionDelay).toBe('150ms');
+    });
+  });
+
   describe('Edge Cases', () => {
     it('should handle empty experiences array', () => {
       const { container } = render(<ExperienceTimeline experiences={[]} />);

@@ -1,5 +1,6 @@
 import { Section } from '@/components/ui/Section';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { ExperienceCard } from '@/components/ExperienceCard';
 import type { ExperienceItem } from '@/data';
 
@@ -20,8 +21,10 @@ export function ExperienceTimeline({
         <SectionHeading color="navy">{title}</SectionHeading>
 
         <div className="space-y-8">
-          {experiences.map((job) => (
-            <ExperienceCard key={job.startYear + job.company} job={job} />
+          {experiences.map((job, index) => (
+            <ScrollReveal key={job.startYear + job.company} delay={index * 150}>
+              <ExperienceCard job={job} />
+            </ScrollReveal>
           ))}
         </div>
       </div>
