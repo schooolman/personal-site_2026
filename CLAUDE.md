@@ -33,7 +33,7 @@ Always write tests for:
 - Complex logic or calculations
 - User interactions (clicks, forms, navigation)
 
-**Current status:** Tests not yet configured. When adding tests, use Jest + React Testing Library.
+**Current status:** Vitest + React Testing Library configured. All tests passing (73/73).
 
 ### 3. Pre-Push Checklist
 Before pushing ANY code:
@@ -51,7 +51,9 @@ npm test       # MUST pass (when tests exist)
 - `npm run dev` — Start dev server (localhost:3000)
 - `npm run build` — Build static export to `out/`
 - `npm run lint` — Run ESLint
-- `npm test` — Run tests (when configured)
+- `npm test` — Run tests with Vitest
+- `npm run test:watch` — Run tests in watch mode (for TDD)
+- `npm run test:coverage` — Generate coverage report
 
 ### Tech Stack
 - Next.js 16 (App Router, static export)
@@ -121,12 +123,18 @@ npm test       # MUST pass (when tests exist)
 1. **Red - Write failing test:**
    ```tsx
    // components/ScrollToTop.test.tsx
-   test('ScrollToTop button scrolls to top when clicked', () => {
-     render(<ScrollToTop />);
-     window.scrollTo(0, 500);
-     const button = screen.getByRole('button', { name: /scroll to top/i });
-     fireEvent.click(button);
-     expect(window.scrollY).toBe(0);
+   import { describe, it, expect } from 'vitest';
+   import { render, screen, fireEvent } from '@/test/utils';
+   import ScrollToTop from './ScrollToTop';
+
+   describe('ScrollToTop Component', () => {
+     it('scrolls to top when clicked', () => {
+       render(<ScrollToTop />);
+       window.scrollTo(0, 500);
+       const button = screen.getByRole('button', { name: /scroll to top/i });
+       fireEvent.click(button);
+       expect(window.scrollY).toBe(0);
+     });
    });
    ```
 
