@@ -13,6 +13,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jake.school"),
   title: {
     default: "Jake Schoolmeesters | Senior Front End Developer",
     template: "%s | Jake Schoolmeesters",
@@ -25,6 +26,17 @@ export const metadata: Metadata = {
       "Front-end developer based in Chicago specializing in Adobe Experience Manager.",
     type: "website",
     locale: "en_US",
+    url: "https://jake.school",
+    siteName: "Jake Schoolmeesters",
+  },
+  icons: {
+    icon: "/favicon.png",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jake Schoolmeesters | Senior Front End Developer",
+    description:
+      "Front-end developer based in Chicago specializing in Adobe Experience Manager.",
   },
 };
 
