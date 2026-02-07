@@ -44,16 +44,34 @@ describe('SectionHeading Component', () => {
   });
 
   describe('Color Variants', () => {
-    it('should apply navy color by default', () => {
+    it('should apply white text by default (navy variant)', () => {
       render(<SectionHeading>Navy Heading</SectionHeading>);
       const heading = screen.getByRole('heading');
-      expect(heading.className).toContain('text-chicago-navy');
+      expect(heading.className).toContain('text-white');
     });
 
-    it('should apply cream color when specified', () => {
+    it('should apply neon-lime text for cream variant', () => {
       render(<SectionHeading color="cream">Cream Heading</SectionHeading>);
       const heading = screen.getByRole('heading');
-      expect(heading.className).toContain('text-chicago-cream');
+      expect(heading.className).toContain('text-neon-lime');
+    });
+
+    it('should apply neon-lime text for lime variant', () => {
+      render(<SectionHeading color="lime">Lime Heading</SectionHeading>);
+      const heading = screen.getByRole('heading');
+      expect(heading.className).toContain('text-neon-lime');
+    });
+
+    it('should apply electric-blue text for blue variant', () => {
+      render(<SectionHeading color="blue">Blue Heading</SectionHeading>);
+      const heading = screen.getByRole('heading');
+      expect(heading.className).toContain('text-electric-blue');
+    });
+
+    it('should apply uppercase styling', () => {
+      render(<SectionHeading>Uppercase Heading</SectionHeading>);
+      const heading = screen.getByRole('heading');
+      expect(heading.className).toContain('uppercase');
     });
   });
 

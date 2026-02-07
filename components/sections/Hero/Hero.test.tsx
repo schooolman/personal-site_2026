@@ -63,7 +63,20 @@ describe('Hero Component', () => {
     it('should have minimum height styling', () => {
       const { container } = render(<Hero {...defaultProps} />);
       const section = container.querySelector('section');
-      expect(section?.className).toContain('min-h-[85vh]');
+      expect(section?.className).toContain('min-h-[90vh]');
+    });
+
+    it('should have dot pattern background', () => {
+      const { container } = render(<Hero {...defaultProps} />);
+      const section = container.querySelector('section');
+      expect(section?.className).toContain('dot-pattern');
+    });
+
+    it('should have bottom border', () => {
+      const { container } = render(<Hero {...defaultProps} />);
+      const section = container.querySelector('section');
+      expect(section?.className).toContain('border-b-4');
+      expect(section?.className).toContain('border-white');
     });
   });
 

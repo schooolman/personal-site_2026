@@ -18,12 +18,12 @@ export function Button({
   type = 'button',
   onClick,
 }: ButtonProps) {
-  const baseStyles = 'inline-block px-6 py-3 rounded text-sm font-medium transition-colors';
+  const baseStyles = 'inline-block px-5 py-3 sm:px-8 sm:py-4 text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 transform hover:scale-105';
 
   const variantStyles = {
-    primary: 'bg-chicago-green text-chicago-cream hover:bg-chicago-green/90',
-    secondary: 'border border-chicago-sage/40 text-chicago-sage hover:border-chicago-sage hover:text-chicago-cream',
-    outline: 'bg-chicago-navy text-chicago-cream hover:bg-chicago-navy/90',
+    primary: 'bg-neon-lime text-black hover:bg-electric-blue hover:text-white border-2 border-transparent',
+    secondary: 'bg-black border-2 border-white text-white hover:bg-electric-blue hover:border-electric-blue',
+    outline: 'bg-transparent border-2 border-neon-lime text-neon-lime hover:bg-neon-lime hover:text-black',
   };
 
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className}`.trim();

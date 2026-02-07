@@ -62,10 +62,16 @@ describe('CTASection Component', () => {
   });
 
   describe('Background', () => {
-    it('should apply green background by default', () => {
+    it('should apply gradient background by default', () => {
       const { container } = render(<CTASection {...defaultProps} />);
       const section = container.querySelector('section');
-      expect(section?.className).toContain('bg-chicago-green');
+      expect(section?.className).toContain('bg-gradient-to-r');
+    });
+
+    it('should have top border', () => {
+      const { container } = render(<CTASection {...defaultProps} />);
+      const section = container.querySelector('section');
+      expect(section?.className).toContain('border-t-4');
     });
   });
 });

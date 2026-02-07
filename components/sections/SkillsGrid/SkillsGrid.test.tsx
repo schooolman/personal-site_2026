@@ -32,10 +32,16 @@ describe('SkillsGrid Component', () => {
       expect(section).toBeInTheDocument();
     });
 
-    it('should have navy background by default', () => {
+    it('should have gradient background', () => {
       const { container } = render(<SkillsGrid skills={mockSkills} />);
       const section = container.querySelector('section');
-      expect(section?.className).toContain('bg-chicago-navy');
+      expect(section?.className).toContain('bg-gradient-to-r');
+    });
+
+    it('should have top border', () => {
+      const { container } = render(<SkillsGrid skills={mockSkills} />);
+      const section = container.querySelector('section');
+      expect(section?.className).toContain('border-t-4');
     });
   });
 

@@ -58,15 +58,21 @@ describe('ProfileImage Component', () => {
   });
 
   describe('Styling', () => {
-    it('should have rounded corners', () => {
+    it('should not have rounded corners', () => {
       const { container } = render(<ProfileImage {...defaultProps} />);
       const imageWrapper = container.querySelector('.rounded-lg');
+      expect(imageWrapper).not.toBeInTheDocument();
+    });
+
+    it('should have neon-lime border accent', () => {
+      const { container } = render(<ProfileImage {...defaultProps} />);
+      const imageWrapper = container.querySelector('.border-neon-lime');
       expect(imageWrapper).toBeInTheDocument();
     });
 
-    it('should have border accent', () => {
+    it('should have bold 4px border', () => {
       const { container } = render(<ProfileImage {...defaultProps} />);
-      const imageWrapper = container.querySelector('.border-chicago-green\\/30');
+      const imageWrapper = container.querySelector('.border-4');
       expect(imageWrapper).toBeInTheDocument();
     });
 

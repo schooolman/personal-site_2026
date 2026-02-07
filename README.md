@@ -18,7 +18,25 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Space Mono](https://fonts.google.com/specimen/Space+Mono), a monospace font.
+
+## Design System
+
+Inspired by [Smartbar Chicago](https://smartbarchicago.com/).
+
+**Color Palette:**
+- Black (#000000) — Primary background
+- White (#FFFFFF) — Text and borders
+- Neon Lime (#cbd73a) — Primary accent
+- Electric Blue (#103ee5) — Hover/interactive states
+
+**Typography:** Space Mono (400, 700) — monospace throughout
+
+**Visual Features:**
+- 4px white borders on cards (2px on mobile)
+- Halftone dot pattern (left-to-right on desktop, top-to-bottom on mobile)
+- Uppercase bold headings
+- WCAG AAA contrast compliance
 
 ## Learn More
 

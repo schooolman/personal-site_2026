@@ -21,22 +21,29 @@ describe('Section Component', () => {
   });
 
   describe('Background Variants', () => {
-    it('should apply navy background by default', () => {
+    it('should apply black background by default (navy variant)', () => {
       const { container } = render(<Section>Content</Section>);
       const section = container.querySelector('section');
-      expect(section?.className).toContain('bg-chicago-navy');
+      expect(section?.className).toContain('bg-black');
     });
 
-    it('should apply cream background when specified', () => {
+    it('should apply black background for cream variant', () => {
       const { container } = render(<Section background="cream">Content</Section>);
       const section = container.querySelector('section');
-      expect(section?.className).toContain('bg-chicago-cream');
+      expect(section?.className).toContain('bg-black');
     });
 
-    it('should apply green background when specified', () => {
+    it('should apply gradient background for green variant', () => {
       const { container } = render(<Section background="green">Content</Section>);
       const section = container.querySelector('section');
-      expect(section?.className).toContain('bg-chicago-green');
+      expect(section?.className).toContain('bg-gradient-to-r');
+    });
+
+    it('should apply border when border prop is true', () => {
+      const { container } = render(<Section border>Content</Section>);
+      const section = container.querySelector('section');
+      expect(section?.className).toContain('border-t-4');
+      expect(section?.className).toContain('border-white');
     });
   });
 

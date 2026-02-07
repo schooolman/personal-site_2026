@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-chicago-navy text-chicago-cream/70 py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-black text-white/80 py-12 px-4 sm:px-6 lg:px-8 border-t-4 border-white">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="text-sm">
@@ -14,7 +14,7 @@ export default function Footer() {
               href="https://www.linkedin.com/in/jake-schoolmeesters/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-chicago-sage transition-colors"
+              className="hover:text-neon-lime transition-all duration-300"
               aria-label="LinkedIn"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -25,7 +25,7 @@ export default function Footer() {
               href="https://github.com/schooolman"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-chicago-sage transition-colors"
+              className="hover:text-neon-lime transition-all duration-300"
               aria-label="GitHub"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -36,7 +36,7 @@ export default function Footer() {
               href="https://bsky.app/profile/jake.school"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-chicago-sage transition-colors"
+              className="hover:text-neon-lime transition-all duration-300"
               aria-label="Bluesky"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 576 512">
@@ -45,7 +45,7 @@ export default function Footer() {
             </a>
             <a
               href="mailto:j.schoolmee@gmail.com"
-              className="hover:text-chicago-sage transition-colors"
+              className="hover:text-neon-lime transition-all duration-300"
               aria-label="Email"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -55,7 +55,7 @@ export default function Footer() {
           </div>
 
           <div className="text-sm">
-            <Link href="/contact" className="hover:text-chicago-sage transition-colors">
+            <Link href="/contact" className="hover:text-neon-lime transition-all duration-300">
               Get in touch
             </Link>
           </div>

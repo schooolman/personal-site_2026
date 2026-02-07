@@ -48,10 +48,16 @@ describe('ExperienceTimeline Component', () => {
       expect(section).toBeInTheDocument();
     });
 
-    it('should have cream background', () => {
+    it('should have black background', () => {
       const { container } = render(<ExperienceTimeline experiences={mockExperiences} />);
       const section = container.querySelector('section');
-      expect(section?.className).toContain('bg-chicago-cream');
+      expect(section?.className).toContain('bg-black');
+    });
+
+    it('should have top border', () => {
+      const { container } = render(<ExperienceTimeline experiences={mockExperiences} />);
+      const section = container.querySelector('section');
+      expect(section?.className).toContain('border-t-4');
     });
 
     it('should have id attribute when provided', () => {
@@ -64,7 +70,7 @@ describe('ExperienceTimeline Component', () => {
   describe('Timeline Layout', () => {
     it('should have spacing between cards', () => {
       const { container } = render(<ExperienceTimeline experiences={mockExperiences} />);
-      const timeline = container.querySelector('.space-y-12');
+      const timeline = container.querySelector('.space-y-8');
       expect(timeline).toBeInTheDocument();
     });
 
@@ -78,7 +84,7 @@ describe('ExperienceTimeline Component', () => {
   describe('Edge Cases', () => {
     it('should handle empty experiences array', () => {
       const { container } = render(<ExperienceTimeline experiences={[]} />);
-      const timeline = container.querySelector('.space-y-12');
+      const timeline = container.querySelector('.space-y-8');
       expect(timeline).toBeInTheDocument();
       expect(timeline?.children.length).toBe(0);
     });
