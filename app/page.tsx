@@ -1,7 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Metadata } from "next";
 import { profileData, experienceData, skillsData } from "@/data";
+import { Button } from "@/components/ui/Button";
+import { SkillBadge } from "@/components/ui/SkillBadge";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Section } from "@/components/ui/Section";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -36,18 +39,10 @@ export default function Home() {
                 Manager with 8+ years of experience.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
-                <Link
-                  href="/contact"
-                  className="inline-block bg-chicago-green text-chicago-cream px-6 py-3 rounded text-sm font-medium hover:bg-chicago-green/90 transition-colors"
-                >
-                  Get in Touch
-                </Link>
-                <a
-                  href="#experience"
-                  className="inline-block border border-chicago-sage/40 text-chicago-sage px-6 py-3 rounded text-sm font-medium hover:border-chicago-sage hover:text-chicago-cream transition-colors"
-                >
+                <Button href="/contact">Get in Touch</Button>
+                <Button href="#experience" variant="secondary">
                   View Experience
-                </a>
+                </Button>
               </div>
             </div>
 
@@ -68,11 +63,9 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-chicago-cream">
+      <Section id="experience" background="cream">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-chicago-navy mb-12">
-            Experience
-          </h2>
+          <SectionHeading>Experience</SectionHeading>
 
           <div className="space-y-12">
             {experienceData.map((job) => (
@@ -103,46 +96,36 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Skills Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-chicago-navy">
+      <Section background="navy">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-chicago-cream mb-12">
-            Skills &amp; Technologies
-          </h2>
+          <SectionHeading color="cream">Skills &amp; Technologies</SectionHeading>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {skillsData.map((skill) => (
-              <div
-                key={skill}
-                className="bg-chicago-navy border border-chicago-sage/20 rounded px-4 py-3 text-sm text-chicago-cream/90 text-center hover:border-chicago-sage/50 transition-colors"
-              >
-                {skill}
-              </div>
+              <SkillBadge key={skill} label={skill} />
             ))}
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-chicago-green">
+      <Section background="green">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-chicago-cream mb-4">
+          <SectionHeading color="cream" align="center" className="mb-4">
             Let&apos;s Work Together
-          </h2>
+          </SectionHeading>
           <p className="text-chicago-cream/80 mb-8 text-lg max-w-xl mx-auto">
             Interested in working together or have a question? I&apos;d love to
             hear from you.
           </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-chicago-navy text-chicago-cream px-8 py-4 rounded text-sm font-medium hover:bg-chicago-navy/90 transition-colors"
-          >
+          <Button href="/contact" variant="outline" className="px-8 py-4">
             Contact Me
-          </Link>
+          </Button>
         </div>
-      </section>
+      </Section>
     </>
   );
 }
