@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import { profileData, experienceData, skillsData } from "@/data";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -9,111 +10,12 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Jake Schoolmeesters",
-  jobTitle: "Senior Front End Developer - Adobe Experience Manager",
-  url: "https://jake.school",
-  sameAs: [
-    "https://www.linkedin.com/in/jake-schoolmeesters/",
-    "https://github.com/schooolman",
-    "https://bsky.app/profile/jake.school",
-  ],
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Chicago",
-    addressRegion: "IL",
-    addressCountry: "US",
-  },
-  email: "j.schoolmee@gmail.com",
-  description:
-    "Front-end developer based in Chicago specializing in Adobe Experience Manager with 8+ years of experience.",
-  worksFor: [
-    {
-      "@type": "Organization",
-      name: "Bounteous",
-      startDate: "2020-07",
-    },
-  ],
-  alumniOf: [
-    { "@type": "EducationalOrganization", name: "Prime Digital Academy" },
-    { "@type": "EducationalOrganization", name: "Metropolitan State University" },
-  ],
-  knowsAbout: [
-    "Adobe Experience Manager",
-    "React",
-    "Next.js",
-    "JavaScript",
-    "TypeScript",
-    "HTML",
-    "CSS",
-    "Front End Development",
-  ],
-};
-
-const experience = [
-  {
-    startYear: "2020",
-    endYear: "Present",
-    title: "Senior Front End Developer AEM",
-    company: "Bounteous",
-    location: "Chicago, IL",
-    bullets: [
-      "Spearhead Front End development initiatives within the Adobe Experience Manager (AEM) practice",
-      "Work with clients on existing and new AEM sites, while maintaining code and accessibility standards",
-      "Utilize AEM technology stack, including JavaScript and various frameworks, HTML, SCSS/LESS, and Java for backend tasks",
-      "Retrieve and display data from the backend using RESTful APIs and other external services",
-      "Provide mentorship and guidance to junior developers and apprentices enrolled in our Apprenticeship program",
-    ],
-  },
-  {
-    startYear: "2018",
-    endYear: "2020",
-    title: "Front End Developer AEM",
-    company: "ICF Next",
-    location: "Chicago, IL",
-    bullets: [
-      "Participated in Front End development cycle for clients using the Adobe Experience Manager CMS",
-      "Completed work within a standard development lifecycle, from planning to production",
-      "Collaborated with designers to ensure pixel perfect layout and accessibility standards are being met",
-      "Mentored junior developers and served as a company onboarding guide",
-    ],
-  },
-  {
-    startYear: "2016",
-    endYear: "2018",
-    title: "Front End Developer",
-    company: "SportsEngine",
-    location: "Minneapolis, MN",
-    bullets: [
-      "Collaborated with the creative team to design and develop custom websites for sports teams using the SportsEngine CMS",
-      "Constructed marketing websites, maintained Corporate site, and created landing pages and micro-sites",
-    ],
-  },
-];
-
-const skills = [
-  "Adobe Experience Manager",
-  "React",
-  "Next.js",
-  "JavaScript",
-  "TypeScript",
-  "HTML",
-  "CSS / SCSS",
-  "HTL / Sightly",
-  "Java",
-  "RESTful APIs",
-  "Git",
-  "Accessibility (WCAG)",
-];
-
 export default function Home() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profileData) }}
       />
 
       {/* Hero Section */}
@@ -173,7 +75,7 @@ export default function Home() {
           </h2>
 
           <div className="space-y-12">
-            {experience.map((job) => (
+            {experienceData.map((job) => (
               <div
                 key={job.startYear + job.company}
                 className="border-l-4 border-chicago-green pl-6"
@@ -211,7 +113,7 @@ export default function Home() {
           </h2>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            {skills.map((skill) => (
+            {skillsData.map((skill) => (
               <div
                 key={skill}
                 className="bg-chicago-navy border border-chicago-sage/20 rounded px-4 py-3 text-sm text-chicago-cream/90 text-center hover:border-chicago-sage/50 transition-colors"
