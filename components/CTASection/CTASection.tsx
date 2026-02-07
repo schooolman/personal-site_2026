@@ -16,15 +16,15 @@ export function CTASection({
   buttonHref,
 }: CTASectionProps) {
   return (
-    <Section background="green">
+    <Section background="green" border>
       <div className="max-w-4xl mx-auto text-center">
-        <SectionHeading color="cream" align="center" className="mb-4">
+        <SectionHeading color="lime" align="center" className="mb-4">
           {title}
         </SectionHeading>
-        <p className="text-chicago-cream/80 mb-8 text-lg max-w-xl mx-auto">
+        <p className="text-white/90 mb-8 text-base sm:text-lg lg:text-xl max-w-xl mx-auto font-bold">
           {description}
         </p>
-        <Button href={buttonHref} variant="outline" className="px-8 py-4">
+        <Button href={buttonHref} variant="outline" className="sm:px-10 sm:py-5 sm:text-lg">
           {buttonText}
         </Button>
       </div>

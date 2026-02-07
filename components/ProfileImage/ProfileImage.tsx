@@ -21,7 +21,7 @@ export function ProfileImage({
 
   return (
     <div className={`relative w-full ${sizeStyles[size]} mx-auto lg:max-w-md`}>
-      <div className="aspect-square rounded-lg overflow-hidden shadow-2xl border-2 border-chicago-green/30">
+      <div className="aspect-square overflow-hidden shadow-2xl border-4 border-neon-lime hover:border-electric-blue transition-colors duration-300">
         <Image
           src={src}
           alt={alt}

@@ -15,11 +15,11 @@ export function ExperienceTimeline({
   id,
 }: ExperienceTimelineProps) {
   return (
-    <Section id={id} background="cream">
+    <Section id={id} background="navy" border>
       <div className="max-w-4xl mx-auto">
-        <SectionHeading>{title}</SectionHeading>
+        <SectionHeading color="navy">{title}</SectionHeading>
 
-        <div className="space-y-12">
+        <div className="space-y-8">
           {experiences.map((job) => (
             <ExperienceCard key={job.startYear + job.company} job={job} />
           ))}

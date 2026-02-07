@@ -1,14 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F5F0E8;
-  --foreground: #2C2C2C;
-  --chicago-navy: #1B2A4A;
-  --chicago-blue: #2D5F8A;
-  --chicago-green: #3A6B4F;
-  --chicago-sage: #7BA38E;
-  --chicago-cream: #F5F0E8;
-  --chicago-charcoal: #2C2C2C;
+  /* Base - Smartbar-inspired black/white */
+  --background: #000000;
+  --foreground: #FFFFFF;
+
+  /* Legacy variables (remapped for compatibility) */
+  --chicago-navy: #000000;
+  --chicago-blue: #103ee5;
+  --chicago-green: #cbd73a;
+  --chicago-sage: #81d742;
+  --chicago-cream: #FFFFFF;
+  --chicago-charcoal: #FFFFFF;
+
+  /* New Smartbar color palette */
+  --neon-lime: #cbd73a;
+  --electric-blue: #103ee5;
+  --bright-green: #81d742;
+  --neon-purple: #a363e2;
+  --neon-orange: #fbba34;
+  --white: #FFFFFF;
+  --black: #000000;
 }
 
 @theme inline {
@@ -20,12 +32,140 @@
   --color-chicago-sage: var(--chicago-sage);
   --color-chicago-cream: var(--chicago-cream);
   --color-chicago-charcoal: var(--chicago-charcoal);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-neon-lime: var(--neon-lime);
+  --color-electric-blue: var(--electric-blue);
+  --color-bright-green: var(--bright-green);
+  --color-neon-purple: var(--neon-purple);
+  --color-neon-orange: var(--neon-orange);
+  --color-white: var(--white);
+  --color-black: var(--black);
+  --font-sans: var(--font-space-mono);
+  --font-mono: var(--font-space-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), 'Courier New', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smartbar-inspired animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blueBlackGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Animated gradient backgrounds */
+.gradient-animated {
+  background: linear-gradient(270deg, #000000, #103ee5, #000000);
+  background-size: 400% 400%;
+  animation: blueBlackGradient 10s ease infinite;
+}
+
+/* Halftone dot pattern (Smartbar-inspired) */
+.dot-pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Small dots — visible on the left */
+.dot-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--electric-blue) 2px, transparent 2.5px);
+  background-size: 18px 18px;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(to right, black 0%, black 20%, transparent 50%);
+  mask-image: linear-gradient(to right, black 0%, black 20%, transparent 50%);
+}
+
+/* Large dots — visible on the right, merging to solid */
+.dot-pattern::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--electric-blue) 11px, transparent 11.5px);
+  background-size: 18px 18px;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(to right, transparent 40%, black 70%);
+  mask-image: linear-gradient(to right, transparent 40%, black 70%);
+}
+
+.dot-pattern > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile: vertical dot pattern (top to bottom) */
+@media (max-width: 640px) {
+  .dot-pattern::before {
+    background-image: radial-gradient(circle, var(--electric-blue) 1.5px, transparent 2px);
+    background-size: 14px 14px;
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 15%, transparent 45%);
+    mask-image: linear-gradient(to bottom, black 0%, black 15%, transparent 45%);
+  }
+
+  .dot-pattern::after {
+    background-image: radial-gradient(circle, var(--electric-blue) 9px, transparent 9.5px);
+    background-size: 14px 14px;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 40%, black 75%);
+    mask-image: linear-gradient(to bottom, transparent 40%, black 75%);
+  }
+}
+
+/* Stagger animations for lists */
+.animate-stagger > * {
+  animation: slideInUp 0.6s ease-out backwards;
+}
+
+.animate-stagger > *:nth-child(1) { animation-delay: 0.1s; }
+.animate-stagger > *:nth-child(2) { animation-delay: 0.2s; }
+.animate-stagger > *:nth-child(3) { animation-delay: 0.3s; }
+.animate-stagger > *:nth-child(4) { animation-delay: 0.4s; }
+.animate-stagger > *:nth-child(5) { animation-delay: 0.5s; }
+.animate-stagger > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* Custom focus styles for accessibility */
+*:focus-visible {
+  outline: 3px solid var(--neon-lime);
+  outline-offset: 2px;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

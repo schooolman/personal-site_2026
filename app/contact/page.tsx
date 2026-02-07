@@ -37,41 +37,41 @@ const socialLinks = [
 
 export default function Contact() {
   return (
-    <section className="min-h-[80vh] flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-chicago-cream">
+    <section className="min-h-[80vh] flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-black border-t-4 border-white">
       <div className="max-w-4xl mx-auto w-full">
-        <h1 className="text-3xl sm:text-4xl font-bold text-chicago-navy mb-4">
+        <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 uppercase tracking-tight">
           Get in Touch
         </h1>
-        <p className="text-lg text-chicago-charcoal/70 mb-12 max-w-xl">
+        <p className="text-base sm:text-lg text-white/70 mb-8 sm:mb-12 max-w-xl">
           Have a project in mind or just want to say hello? I&apos;d love to hear from you.
         </p>
 
-        <div className="grid sm:grid-cols-2 gap-12">
+        <div className="grid sm:grid-cols-2 gap-8">
           {/* Contact Info */}
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-sm font-semibold uppercase tracking-wider text-chicago-green mb-2">
+          <div className="space-y-6">
+            <div className="border-2 sm:border-4 border-white bg-black p-4 sm:p-6 hover:border-neon-lime transition-all duration-300">
+              <h2 className="text-sm font-bold uppercase tracking-wider text-neon-lime mb-2">
                 Email
               </h2>
               <a
                 href="mailto:j.schoolmee@gmail.com"
-                className="text-xl text-chicago-navy hover:text-chicago-blue transition-colors"
+                className="text-base sm:text-xl text-white hover:text-electric-blue transition-colors font-bold break-all sm:break-normal"
               >
                 j.schoolmee@gmail.com
               </a>
             </div>
 
-            <div>
-              <h2 className="text-sm font-semibold uppercase tracking-wider text-chicago-green mb-2">
+            <div className="border-2 sm:border-4 border-white bg-black p-4 sm:p-6 hover:border-neon-lime transition-all duration-300">
+              <h2 className="text-sm font-bold uppercase tracking-wider text-neon-lime mb-2">
                 Location
               </h2>
-              <p className="text-xl text-chicago-navy">Chicago, IL</p>
+              <p className="text-base sm:text-xl text-white font-bold">Chicago, IL</p>
             </div>
           </div>
 
           {/* Social Links */}
-          <div>
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-chicago-green mb-4">
+          <div className="border-2 sm:border-4 border-white bg-black p-4 sm:p-6 hover:border-neon-lime transition-all duration-300">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-neon-lime mb-4">
               Find Me Online
             </h2>
             <div className="space-y-4">
@@ -81,12 +81,12 @@ export default function Contact() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-chicago-navy hover:text-chicago-blue transition-colors group"
+                  className="flex items-center gap-3 text-white hover:text-electric-blue transition-all duration-300 group"
                 >
-                  <span className="text-chicago-sage group-hover:text-chicago-blue transition-colors">
+                  <span className="text-white/60 group-hover:text-neon-lime transition-all duration-300">
                     {link.icon}
                   </span>
-                  <span className="text-lg">{link.name}</span>
+                  <span className="text-lg font-bold">{link.name}</span>
                 </a>
               ))}
             </div>

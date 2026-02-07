@@ -14,10 +14,10 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-chicago-navy/95 backdrop-blur-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b-4 border-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-chicago-cream font-semibold text-lg tracking-tight">
+          <Link href="/" className="text-white font-bold text-lg tracking-wider uppercase">
             Jake Schoolmeesters
           </Link>
 
@@ -27,10 +27,10 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm transition-colors ${
+                className={`text-sm font-bold uppercase tracking-wide transition-all duration-300 ${
                   pathname === link.href
-                    ? "text-chicago-sage font-medium"
-                    : "text-chicago-cream/80 hover:text-chicago-cream"
+                    ? "text-neon-lime border-b-2 border-neon-lime"
+                    : "text-white hover:text-electric-blue"
                 }`}
               >
                 {link.label}
@@ -40,7 +40,7 @@ export default function Navigation() {
 
           {/* Mobile hamburger */}
           <button
-            className="sm:hidden text-chicago-cream"
+            className="sm:hidden text-white"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -56,16 +56,16 @@ export default function Navigation() {
 
         {/* Mobile menu */}
         {isOpen && (
-          <div className="sm:hidden pb-4 border-t border-chicago-cream/10">
+          <div className="sm:hidden pb-4 border-t-4 border-white bg-black">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`block py-2 text-sm transition-colors ${
+                className={`block py-3 text-sm font-bold uppercase tracking-wide transition-all duration-300 ${
                   pathname === link.href
-                    ? "text-chicago-sage font-medium"
-                    : "text-chicago-cream/80 hover:text-chicago-cream"
+                    ? "text-neon-lime"
+                    : "text-white hover:text-electric-blue"
                 }`}
               >
                 {link.label}

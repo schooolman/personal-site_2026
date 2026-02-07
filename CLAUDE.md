@@ -33,7 +33,7 @@ Always write tests for:
 - Complex logic or calculations
 - User interactions (clicks, forms, navigation)
 
-**Current status:** Vitest + React Testing Library configured. All tests passing (73/73).
+**Current status:** Vitest + React Testing Library configured. All tests passing (188/188).
 
 ### 3. Pre-Push Checklist
 Before pushing ANY code:
@@ -68,9 +68,13 @@ npm test       # MUST pass (when tests exist)
 - `public/` — Static assets
 
 ### Styling
-- Chicago blues/greens palette in `app/globals.css` as CSS custom properties
+- Smartbar-inspired dark theme: black backgrounds, neon lime (#cbd73a), electric blue (#103ee5)
+- Space Mono monospace font throughout
+- Color palette defined as CSS custom properties in `app/globals.css`
 - All color changes go through CSS variables
 - Component markup uses Tailwind utility classes
+- Halftone dot pattern utility class (`.dot-pattern`) in globals.css
+- Bold white borders (4px desktop, 2px mobile) on cards and sections
 
 ---
 
@@ -269,7 +273,11 @@ Follow TDD and branching workflow when implementing.
 ## Common Tasks
 
 ### Changing Colors
-Edit `app/globals.css` `:root` block. All colors are CSS custom properties.
+Edit `app/globals.css` `:root` block. Current Smartbar-inspired palette:
+- `--neon-lime: #cbd73a` — Primary accent (headings, borders, active states)
+- `--electric-blue: #103ee5` — Hover states, dot pattern, interactive elements
+- `--bright-green: #81d742` — Secondary accent
+- Legacy `--chicago-*` variables are remapped to the new palette for compatibility
 
 ### Adding a New Page
 1. Create feature branch: `git checkout -b feature/new-page`

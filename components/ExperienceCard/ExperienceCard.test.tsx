@@ -66,8 +66,9 @@ describe('ExperienceCard Component', () => {
   describe('Styling', () => {
     it('should apply border accent styles', () => {
       const { container } = render(<ExperienceCard job={mockJob} />);
-      const card = container.querySelector('.border-l-4');
+      const card = container.querySelector('[class*="border-l-"]');
       expect(card).toBeInTheDocument();
+      expect(card?.className).toContain('border-neon-lime');
     });
   });
 

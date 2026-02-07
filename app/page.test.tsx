@@ -98,9 +98,9 @@ describe('Home Page', () => {
       ).toBeInTheDocument();
     });
 
-    it('displays Adobe Experience Manager skill', () => {
+    it('displays AEMaaCS skill', () => {
       render(<Home />);
-      expect(screen.getByText('Adobe Experience Manager')).toBeInTheDocument();
+      expect(screen.getByText('AEMaaCS')).toBeInTheDocument();
     });
 
     it('displays React skill', () => {

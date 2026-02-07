@@ -4,7 +4,7 @@ interface SectionHeadingProps {
   children: ReactNode;
   level?: 'h1' | 'h2' | 'h3';
   align?: 'left' | 'center';
-  color?: 'navy' | 'cream';
+  color?: 'navy' | 'cream' | 'lime' | 'blue';
   className?: string;
 }
 
@@ -15,7 +15,7 @@ export function SectionHeading({
   color = 'navy',
   className = '',
 }: SectionHeadingProps) {
-  const baseStyles = 'text-3xl sm:text-4xl font-bold mb-12';
+  const baseStyles = 'text-2xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 lg:mb-12 tracking-tight leading-tight uppercase';
 
   const alignStyles = {
     left: 'text-left',
@@ -23,8 +23,10 @@ export function SectionHeading({
   };
 
   const colorStyles = {
-    navy: 'text-chicago-navy',
-    cream: 'text-chicago-cream',
+    navy: 'text-white',
+    cream: 'text-neon-lime',
+    lime: 'text-neon-lime',
+    blue: 'text-electric-blue',
   };
 
   const combinedClassName = `${baseStyles} ${alignStyles[align]} ${colorStyles[color]} ${className}`.trim();
