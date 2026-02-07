@@ -40,6 +40,14 @@ vi.mock('next/link', () => ({
   },
 }));
 
+// Mock IntersectionObserver (not available in jsdom)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+global.IntersectionObserver = vi.fn().mockImplementation((_callback) => ({
+  observe: vi.fn(),
+  unobserve: vi.fn(),
+  disconnect: vi.fn(),
+})) as unknown as typeof IntersectionObserver;
+
 // Suppress console errors in tests (optional, for cleaner output)
 global.console = {
   ...console,
