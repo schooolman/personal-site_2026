@@ -1,5 +1,5 @@
 export const skillsData: string[] = [
-  "Adobe Experience Manager",
+  "AEMaaCS",
   "React",
   "Next.js",
   "JavaScript",
