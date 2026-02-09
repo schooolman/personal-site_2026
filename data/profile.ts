@@ -4,7 +4,7 @@ export const profileData: ProfileData = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Jake Schoolmeesters",
-  jobTitle: "Senior Front End Developer - Adobe Experience Manager",
+  jobTitle: "Senior AEM Software Engineer",
   url: "https://jake.school",
   sameAs: [
     "https://www.linkedin.com/in/jake-schoolmeesters/",
@@ -19,12 +19,12 @@ export const profileData: ProfileData = {
   },
   email: "j.schoolmee@gmail.com",
   description:
-    "Front-end developer based in Chicago specializing in Adobe Experience Manager with 8+ years of experience.",
+    "Front-end developer based in Chicago specializing in Adobe Experience Manager with 9+ years of experience.",
   worksFor: [
     {
       "@type": "Organization",
-      name: "Bounteous",
-      startDate: "2020-07",
+      name: "Subway",
+      startDate: "2025-10",
     },
   ],
   alumniOf: [

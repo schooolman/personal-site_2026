@@ -23,8 +23,8 @@ export default function Home() {
       {/* Hero Section */}
       <Hero
         title="Jake Schoolmeesters"
-        subtitle="Senior Front End Developer"
-        description="Front-end developer based in Chicago. Passionate about creating beautiful and functional user interfaces that help businesses connect with their audiences. Specializing in Adobe Experience Manager with 8+ years of experience."
+        subtitle="🏠 Chicago. 🧑‍💻 Code. 🚴 Cycling."
+        description="Welcome to my small space on the internet. I'm hoping to use this personal site as a place to explore some technical ideas, maybe do some writing, and showcase things that I build."
         imageSrc="/jake_selfie_scotland_small.jpeg"
         imageAlt="Jake Schoolmeesters"
         primaryCTA={{

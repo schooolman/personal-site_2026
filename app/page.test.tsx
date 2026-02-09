@@ -18,9 +18,9 @@ describe('Home Page', () => {
       expect(heading).toBeInTheDocument();
     });
 
-    it('displays job title', () => {
+    it('displays subtitle tagline', () => {
       render(<Home />);
-      expect(screen.getByText('Senior Front End Developer')).toBeInTheDocument();
+      expect(screen.getByText(/Chicago.*Code.*Cycling/)).toBeInTheDocument();
     });
 
     it('renders profile image with correct alt text', () => {
@@ -32,8 +32,7 @@ describe('Home Page', () => {
 
     it('displays introduction text', () => {
       render(<Home />);
-      expect(screen.getByText(/Front-end developer based in Chicago/i)).toBeInTheDocument();
-      expect(screen.getByText(/8\+ years of experience/i)).toBeInTheDocument();
+      expect(screen.getByText(/Welcome to my small space on the internet/i)).toBeInTheDocument();
     });
 
     it('displays Get in Touch CTA button', () => {
@@ -59,15 +58,16 @@ describe('Home Page', () => {
 
     it('displays all companies', () => {
       render(<Home />);
+      expect(screen.getAllByText(/Subway/).length).toBeGreaterThan(0);
       expect(screen.getAllByText(/Bounteous/).length).toBeGreaterThan(0);
       expect(screen.getAllByText(/ICF Next/).length).toBeGreaterThan(0);
       expect(screen.getAllByText(/SportsEngine/).length).toBeGreaterThan(0);
     });
 
-    it('displays current position at Bounteous', () => {
+    it('displays current position at Subway', () => {
       render(<Home />);
-      expect(screen.getByText('Senior Front End Developer AEM')).toBeInTheDocument();
-      expect(screen.getAllByText(/2020/).length).toBeGreaterThan(0);
+      expect(screen.getAllByText('Senior AEM Software Engineer').length).toBeGreaterThan(0);
+      expect(screen.getAllByText(/2025/).length).toBeGreaterThan(0);
       expect(screen.getAllByText(/Present/).length).toBeGreaterThan(0);
     });
 
@@ -169,7 +169,7 @@ describe('Home Page', () => {
         const jsonLd = JSON.parse(script.textContent);
         expect(jsonLd['@type']).toBe('Person');
         expect(jsonLd.name).toBe('Jake Schoolmeesters');
-        expect(jsonLd.jobTitle).toBe('Senior Front End Developer - Adobe Experience Manager');
+        expect(jsonLd.jobTitle).toBe('Senior AEM Software Engineer');
         expect(jsonLd.email).toBe('j.schoolmee@gmail.com');
       }
     });

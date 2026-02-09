@@ -15,13 +15,13 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://jake.school"),
   title: {
-    default: "Jake Schoolmeesters | Senior Front End Developer",
+    default: "Jake Schoolmeesters | Senior AEM Software Engineer",
     template: "%s | Jake Schoolmeesters",
   },
   description:
     "Front-end developer based in Chicago specializing in Adobe Experience Manager. Building beautiful, functional user interfaces.",
   openGraph: {
-    title: "Jake Schoolmeesters | Senior Front End Developer",
+    title: "Jake Schoolmeesters | Senior AEM Software Engineer",
     description:
       "Front-end developer based in Chicago specializing in Adobe Experience Manager.",
     type: "website",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jake Schoolmeesters | Senior Front End Developer",
+    title: "Jake Schoolmeesters | Senior AEM Software Engineer",
     description:
       "Front-end developer based in Chicago specializing in Adobe Experience Manager.",
   },
