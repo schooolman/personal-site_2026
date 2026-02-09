@@ -2,8 +2,21 @@ import { ExperienceItem } from './types';
 
 export const experienceData: ExperienceItem[] = [
   {
-    startYear: "2020",
+    startYear: "2025",
     endYear: "Present",
+    title: "Senior AEM Software Engineer",
+    company: "Subway",
+    location: "Chicago, IL",
+    bullets: [
+      "Architect and develop Subway's digital platform as a hybrid Next.js and Adobe Edge Delivery Services (EDS) implementation",
+      "Build and maintain content-driven experiences powered by AEM Content Fragments, enabling flexible content management across global markets",
+      "Collaborate with cross-functional teams including design, product, and backend engineering to deliver seamless digital experiences",
+      "Implement performant, accessible front-end solutions leveraging both Next.js and AEM technology stacks",
+    ],
+  },
+  {
+    startYear: "2020",
+    endYear: "2025",
     title: "Senior Front End Developer AEM",
     company: "Bounteous",
     location: "Chicago, IL",
